@@ -1,0 +1,11 @@
+rainfall,slope,soil_type,landslide
+120,35,clay,1
+80,20,sand,0
+150,40,clay,1
+60,15,sand,0
+200,45,clay,1
+90,25,loam,0
+170,38,clay,1
+75,18,sand,0
+130,30,loam,1
+50,10,sand,0
