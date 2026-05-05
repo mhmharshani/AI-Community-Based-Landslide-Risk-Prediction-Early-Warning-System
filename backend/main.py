@@ -1,8 +1,21 @@
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 import joblib
 import pandas as pd
 
 app = FastAPI()
+
+origins = [
+    "http://localhost:5173",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 model = joblib.load("../models/landslide_model.pkl")
 le = joblib.load("../models/label_encoder.pkl")
