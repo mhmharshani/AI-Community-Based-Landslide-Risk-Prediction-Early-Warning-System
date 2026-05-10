@@ -1,0 +1,29 @@
+[
+    {
+        "id": "2a3531f2-3144-44f7-9a9b-bc85093f0fb0",
+        "location": "NuwaraEliya",
+        "observations": [
+            "crack",
+            "tilt trees"
+        ],
+        "description": "There has been a heavy rain since yesterday",
+        "media_urls": [
+            "cracks.jpg"
+        ],
+        "risk": "LOW"
+    },
+    {
+        "id": "460ffe42-6fcf-40b6-b284-aa709223ea96",
+        "location": "Rathnapura",
+        "observations": [
+            "cracks",
+            "minor slips"
+        ],
+        "description": "There has been a heavy rain and access roads blocked",
+        "media_urls": [
+            "cracks.jpg",
+            "incident.mp4"
+        ],
+        "risk": "HIGH"
+    }
+]

@@ -1,6 +1,8 @@
 import uuid
 
-def save_report(data):
+from app.repositories.report_repository import save_report
+
+def create_report(data):
 
     report_id = str(uuid.uuid4())
 
@@ -13,10 +15,11 @@ def save_report(data):
         "risk": data.risk
     }
 
-    print(report)
-    print(type(report))
+    print("In Service - Report:", report)
+
+    saved_result = save_report(report)
 
     return {
-        "message": "Report submitted successfully",
-        "report_id": report["id"]
+        "message": "Report saved successfully",
+        "report_id": saved_result["id"]
     }
