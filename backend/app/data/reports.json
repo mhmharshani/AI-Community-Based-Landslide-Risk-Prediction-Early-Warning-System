@@ -25,5 +25,17 @@
             "incident.mp4"
         ],
         "risk": "HIGH"
+    },
+    {
+        "id": "22f34d0b-14b1-44cf-baa0-1901b4e98bd6",
+        "location": "Kegalle",
+        "observations": [
+            "water seepage",
+            "mud flow",
+            "cracks"
+        ],
+        "description": "The cracks are wide open and water seeps through them",
+        "media_urls": [],
+        "risk": "HIGH"
     }
 ]

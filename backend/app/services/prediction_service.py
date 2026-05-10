@@ -17,3 +17,4 @@ def predict_landslide(data):
         return "HIGH RISK"
 
     return "LOW RISK"
+

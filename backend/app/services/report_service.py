@@ -1,6 +1,6 @@
 import uuid
 
-from app.repositories.report_repository import save_report
+from app.repositories.report_repository import find_report_by_id, find_reports, save_report
 
 def create_report(data):
 
@@ -23,3 +23,18 @@ def create_report(data):
         "message": "Report saved successfully",
         "report_id": saved_result["id"]
     }
+
+def get_all_reports():
+
+    all_reports = find_reports()
+    return all_reports
+
+def fetch_report_by_id(id):
+    report = find_report_by_id (id)
+
+    if report==None:
+        return {
+            "message": "Report not found"
+        }
+    else : 
+        return report

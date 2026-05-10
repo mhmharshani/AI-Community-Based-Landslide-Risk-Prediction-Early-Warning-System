@@ -17,3 +17,24 @@ def save_report(report):
         json.dump(reports, file, indent=4)
 
     return report
+
+def find_reports():
+    try:
+        with open(REPORTS_FILE, 'r') as file:
+            reports = json.load(file)
+            return reports
+    except FileNotFoundError:
+        return []
+    
+def find_report_by_id(id):
+    try:
+        with open(REPORTS_FILE, 'r') as file:
+            reports = json.load(file)
+            for report in reports:
+                if report["id"] == id:
+                    return report
+                else :
+                    continue
+            return None
+    except FileNotFoundError:
+        return []
