@@ -22,7 +22,11 @@ def find_reports():
     try:
         with open(REPORTS_FILE, 'r') as file:
             reports = json.load(file)
-            return reports
+            active_reports = []
+            for report in reports:
+                if report["is_deleted"] == False:
+                    active_reports.append(report)
+            return active_reports
     except FileNotFoundError:
         return []
     
@@ -31,7 +35,7 @@ def find_report_by_id(id):
         with open(REPORTS_FILE, 'r') as file:
             reports = json.load(file)
             for report in reports:
-                if report["id"] == id:
+                if report["id"] == id and report["is_deleted"] == False:
                     return report
                 else :
                     continue
@@ -57,5 +61,17 @@ def remove_report_by_id(id):
             json.dump(reports, file, indent=4)
 
         return deleted_report
+    except FileNotFoundError:
+        return []
+    
+def find_reports_by_risk(risk: str):
+    try:
+        with open(REPORTS_FILE, 'r') as file:
+            reports = json.load(file)
+            filtered_reports = []
+            for report in reports:
+                if report["risk"] == risk.upper() and report["is_deleted"] == False:
+                    filtered_reports.append(report)
+            return filtered_reports
     except FileNotFoundError:
         return []

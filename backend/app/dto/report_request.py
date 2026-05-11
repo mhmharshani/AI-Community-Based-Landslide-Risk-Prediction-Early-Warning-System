@@ -8,5 +8,4 @@ class ReportRequest(BaseModel):
     description: str
     media_urls : list[str] = []
     risk: RiskLevel
-    is_deleted: bool = False
    

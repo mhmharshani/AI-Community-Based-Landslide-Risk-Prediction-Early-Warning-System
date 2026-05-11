@@ -1,6 +1,6 @@
 import uuid
 
-from app.repositories.report_repository import find_report_by_id, find_reports, remove_report_by_id, save_report
+from app.repositories.report_repository import find_report_by_id, find_reports, find_reports_by_risk, remove_report_by_id, save_report
 
 def create_report(data):
 
@@ -12,7 +12,8 @@ def create_report(data):
         "observations": data.observations,
         "description": data.description,
         "media_urls": data.media_urls,
-        "risk": data.risk
+        "risk": data.risk,
+        "is_deleted": False
     }
 
     print("In Service - Report:", report)
@@ -50,3 +51,12 @@ def delete_report_by_id(id):
         return {
             "message": "Report with id "+report["id"]+" deleted successfully"
         }
+    
+def filter_reports(risk: str=None):
+    filtered_reports = find_reports_by_risk(risk)
+    if filtered_reports==None:
+        return {
+            "message": "Report not found for the given risk level"
+        }
+    else :
+        return filtered_reports

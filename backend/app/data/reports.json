@@ -1,1 +1,59 @@
-[]
+[
+    {
+        "id": "f64bf898-d9d6-44b0-bf9e-3b753721ab52",
+        "location": "Badulla",
+        "observations": [
+            "cracks"
+        ],
+        "description": "There has been heavy rain since yesterday",
+        "media_urls": [
+            "crack.jpg"
+        ],
+        "risk": "HIGH",
+        "is_deleted": true
+    },
+    {
+        "id": "248b1022-b4fa-4c7f-b5a4-a35a31ed47fd",
+        "location": "Kandy",
+        "observations": [
+            "tilted trees",
+            "wide cracks"
+        ],
+        "description": "There has been heavy rain since yesterday",
+        "media_urls": [
+            "tilted.jpg",
+            "crack_1.jpg",
+            "crack_2.jpg"
+        ],
+        "risk": "HIGH",
+        "is_deleted": false
+    },
+    {
+        "id": "3e52b4c2-7c17-475d-9591-95bc6060d145",
+        "location": "Rathnapura",
+        "observations": [
+            "tilted trees",
+            "cracks"
+        ],
+        "description": "heavy rain and wide open cracks since yesterday",
+        "media_urls": [
+            "tilted.jpg"
+        ],
+        "risk": "LOW",
+        "is_deleted": true
+    },
+    {
+        "id": "a6e425ca-9124-4fde-81d9-5043441d8627",
+        "location": "Matale",
+        "observations": [
+            "subsidence",
+            "cracks"
+        ],
+        "description": "Heavy rain for 3 days",
+        "media_urls": [
+            "crack_1.jpg"
+        ],
+        "risk": "MEDIUM",
+        "is_deleted": false
+    }
+]
