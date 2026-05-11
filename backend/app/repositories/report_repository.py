@@ -38,3 +38,24 @@ def find_report_by_id(id):
             return None
     except FileNotFoundError:
         return []
+    
+def remove_report_by_id(id):
+    try:
+        with open(REPORTS_FILE, 'r') as file:
+            reports = json.load(file)
+        
+            deleted_report = None
+
+        for report in reports:
+
+            if report["id"] == id:
+                report["is_deleted"] = True
+                deleted_report = report
+                break
+
+        with open(REPORTS_FILE, 'w') as file:
+            json.dump(reports, file, indent=4)
+
+        return deleted_report
+    except FileNotFoundError:
+        return []

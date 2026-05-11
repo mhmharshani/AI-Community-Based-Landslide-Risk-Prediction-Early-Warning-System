@@ -1,6 +1,6 @@
 import uuid
 
-from app.repositories.report_repository import find_report_by_id, find_reports, save_report
+from app.repositories.report_repository import find_report_by_id, find_reports, remove_report_by_id, save_report
 
 def create_report(data):
 
@@ -38,3 +38,15 @@ def fetch_report_by_id(id):
         }
     else : 
         return report
+    
+def delete_report_by_id(id):
+    report = remove_report_by_id (id)
+
+    if report==None:
+        return {
+            "message": "Report not found"
+        }
+    else :
+        return {
+            "message": "Report with id "+report["id"]+" deleted successfully"
+        }

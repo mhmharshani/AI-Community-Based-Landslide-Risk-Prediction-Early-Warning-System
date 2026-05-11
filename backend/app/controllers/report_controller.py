@@ -2,7 +2,7 @@
 from fastapi import APIRouter
 
 from app.dto.report_request import ReportRequest
-from app.services.report_service import create_report, fetch_report_by_id, get_all_reports
+from app.services.report_service import create_report, delete_report_by_id, fetch_report_by_id, get_all_reports
 
 
 router = APIRouter()
@@ -31,4 +31,11 @@ def get_report_by_id(id: str):
     result = fetch_report_by_id(id)
     return {
         "Report": result                   
+    }
+
+@router.delete("/delete-report/{id}")
+def delete_report(id: str):
+    result = delete_report_by_id(id)
+    return {
+        "Deleted Report": result
     }
