@@ -10,6 +10,7 @@ def predict(data: PredictionRequest):
 
     result = predict_landslide(data)
 
-    return {
-        "prediction": result
+    return{
+        "message": "Prediction completed successfully",
+        "Prediction data": result
     }

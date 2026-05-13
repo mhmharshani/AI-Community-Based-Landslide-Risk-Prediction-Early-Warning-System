@@ -1,20 +1,27 @@
+from datetime import datetime
+
+from fastapi import HTTPException
 import pandas as pd
 
-from app.ml_models.model_loader import model, encoder
+from app.ml_models.predictor import make_prediction
 
 def predict_landslide(data):
 
-    soil_encoded = encoder.transform([data.soil_type])[0]
+    try:
+        prediction, confidence = make_prediction(data)
 
-    X = pd.DataFrame(
-        [[data.rainfall, data.slope, soil_encoded]],
-        columns=["rainfall", "slope", "soil_type"]
-    )
+    except Exception:
+        raise HTTPException(
+            status_code=500,
+            detail="Prediction failed"
+        )
 
-    prediction = model.predict(X)[0]
-
-    if prediction == 1:
-        return "HIGH RISK"
-
-    return "LOW RISK"
-
+    risk = "HIGH RISK" if prediction == 1 else "LOW RISK"
+   
+    print("Prediction request:", data)
+    print("Prediction result:", risk)
+    return {
+        "prediction": risk,
+        "confidence": confidence,
+        "predicted_at": datetime.now()
+    }
