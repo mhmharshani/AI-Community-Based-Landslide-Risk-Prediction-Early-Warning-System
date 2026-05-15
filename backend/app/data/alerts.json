@@ -1,0 +1,12 @@
+[
+    {
+        "id": "4a08b69a-3041-4fa8-aeb5-d668a81010e3",
+        "location": "Badulla",
+        "message": "Heavy rain is detected",
+        "severity": "HIGH",
+        "source": "MANUAL",
+        "created_at": "2026-05-15T20:21:07.057078",
+        "is_active": true,
+        "is_deleted": false
+    }
+]

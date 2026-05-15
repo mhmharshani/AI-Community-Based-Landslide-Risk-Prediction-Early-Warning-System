@@ -1,11 +1,13 @@
 
-from pydantic import BaseModel
+import uuid
+
+from pydantic import BaseModel, Field
 
 from app.dto.alert_source import AlertSource
 
 
 class AlertResponse(BaseModel):
-    id: str
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     location: str
     message: str
     severity: str

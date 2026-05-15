@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.controllers.prediction_controller import router as prediction_router
 from app.controllers.report_controller import router as report_router
+from app.controllers.alert_controller import router as alert_router
 
 app = FastAPI()
 
@@ -20,6 +21,7 @@ app.add_middleware(
 
 app.include_router(prediction_router)
 app.include_router(report_router)
+app.include_router(alert_router)
 
 @app.get("/")
 def home():
